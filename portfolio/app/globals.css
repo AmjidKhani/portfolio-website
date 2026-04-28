@@ -1,7 +1,8 @@
 /* ============================================================
    FONTS & RESET
+   ✅ FIX 1: Removed @import Google Fonts — next/font/google in layout.tsx
+             handles this already. Loading twice caused FOUC + slower load.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -21,7 +22,11 @@
   --nav-height:     70px;
 }
 
-html { scroll-behavior: smooth; }
+/* ✅ FIX 2: Wrapped in prefers-reduced-motion — respects user accessibility settings */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 body {
   background-color: var(--navy);
   color: var(--lightest-slate);
@@ -68,6 +73,7 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 .nav-links li a:hover { color: var(--green); border-bottom-color: var(--green); }
+/* ✅ Active nav link now works — JS in page.tsx applies this class via IntersectionObserver */
 .nav-links li a.active { color: var(--green); border-bottom-color: var(--green); }
 
 .nav-resume-btn {
@@ -280,7 +286,6 @@ section#home { min-height: 75vh; padding-top: 0; padding-bottom: 0; }
   border-color: var(--green-border);
 }
 
-/* Project card header - Desktop */
 .project-card-header {
   display: flex;
   align-items: center;
@@ -314,7 +319,6 @@ section#home { min-height: 75vh; padding-top: 0; padding-bottom: 0; }
   white-space: nowrap;
 }
 
-/* Mobile: Folder left, buttons right on same row */
 @media (max-width: 640px) {
   .project-card-header {
     display: flex;
@@ -324,11 +328,7 @@ section#home { min-height: 75vh; padding-top: 0; padding-bottom: 0; }
     gap: 8px;
     flex-wrap: nowrap;
   }
-  
-  .project-folder {
-    flex-shrink: 0;
-  }
-  
+  .project-folder { flex-shrink: 0; }
   .project-header-right {
     display: flex;
     align-items: center;
@@ -337,51 +337,25 @@ section#home { min-height: 75vh; padding-top: 0; padding-bottom: 0; }
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-  
   .project-store-buttons {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-  
-  .project-badge {
-    font-size: 9px;
-    padding: 3px 10px;
-  }
+  .project-badge { font-size: 9px; padding: 3px 10px; }
 }
 
-/* Very small screens */
 @media (max-width: 480px) {
-  .project-header-right {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  
-  .project-store-buttons {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  
-  .store-button-label {
-    display: none;
-  }
-  
-  .store-button {
-    padding: 5px 8px !important;
-  }
-  
-  .project-badge {
-    font-size: 8px;
-    padding: 3px 8px;
-  }
+  .project-header-right { flex-wrap: wrap; justify-content: flex-end; }
+  .project-store-buttons { flex-wrap: wrap; justify-content: flex-end; }
+  .store-button-label { display: none; }
+  .store-button { padding: 5px 8px !important; }
+  .project-badge { font-size: 8px; padding: 3px 8px; }
 }
 
-/* Desktop: Show full labels */
 @media (min-width: 641px) {
-  .store-button-label {
-    display: inline;
-  }
+  .store-button-label { display: inline; }
 }
 
 .project-folder svg { width: 38px; height: 38px; fill: none; stroke: var(--green); }

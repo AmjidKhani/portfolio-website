@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 /* ── ICONS ── */
@@ -62,22 +62,16 @@ const IconDownload = () => (
     <polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
   </svg>
 );
-
-/* ── Android (Play Store) icon ── */
 const IconAndroid = () => (
   <svg viewBox="0 0 24 24" width={14} height={14} fill="currentColor">
     <path d="M3 20.5v-17c0-.83 1-.95 1.4-.42l14 8.5c.37.22.37.62 0 .84l-14 8.5c-.4.53-1.4.41-1.4-.42z"/>
   </svg>
 );
-
-/* ── Apple (App Store) icon ── */
 const IconApple = () => (
   <svg viewBox="0 0 24 24" width={14} height={14} fill="currentColor">
     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
   </svg>
 );
-
-/* ── Figma icon ── */
 const IconFigma = () => (
   <svg viewBox="0 0 24 24" width={14} height={14} fill="currentColor">
     <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5zm7-3.5h3.5a3.5 3.5 0 1 1 0 7H12V2zm0 8.5h3.5a3.5 3.5 0 1 1 0 7H12v-7zm-7 3.5A3.5 3.5 0 0 1 8.5 10.5H12V17H8.5A3.5 3.5 0 0 1 5 14zm3.5 3.5A3.5 3.5 0 1 1 12 21.5V18H8.5z"/>
@@ -210,9 +204,9 @@ const projects = [
   },
   {
     name: "Mind Companion",
-    desc: "Mental wellness companion app — designed with a focus on calming UX, mood tracking, and mindfulness exercises.",
+    desc: "Mental wellness companion app — designed with a focus on calming UX, mood tracking, and mindfulness exercises. UI/UX concept in Figma.",
     tech: ["Flutter", "Firebase", "Provider", "Figma"],
-    badge: "Figma",
+    badge: "Figma Design",
     figma: "https://www.figma.com/design/hgJdr7y6lo8ES4cyauKve5/Mind-companion-Redesign",
   },
 ];
@@ -237,23 +231,14 @@ const highlights = [
   "BSc CGPA: 3.56/4.0 · 1st Position",
 ];
 
-/* ── Store Button Component - Responsive ── */
+/* ── Store Button Component ── */
 function StoreButton({ type, url }: { type: "play" | "ios" | "figma"; url: string }) {
   const [hovered, setHovered] = useState(false);
 
   const configs = {
-    play: {
-      icon: <IconAndroid />,
-      label: "Play Store",
-    },
-    ios: {
-      icon: <IconApple />,
-      label: "App Store",
-    },
-    figma: {
-      icon: <IconFigma />,
-      label: "Figma",
-    },
+    play:  { icon: <IconAndroid />, label: "Play Store" },
+    ios:   { icon: <IconApple />,   label: "App Store" },
+    figma: { icon: <IconFigma />,   label: "Figma" },
   };
 
   const cfg = configs[type];
@@ -288,12 +273,7 @@ function StoreButton({ type, url }: { type: "play" | "ios" | "figma"; url: strin
         lineHeight: 1,
       }}
     >
-      <span style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        lineHeight: 0,
-      }}>
+      <span style={{ display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 0 }}>
         {cfg.icon}
       </span>
       <span className="store-button-label">{cfg.label}</span>
@@ -303,31 +283,72 @@ function StoreButton({ type, url }: { type: "play" | "ios" | "figma"; url: strin
 
 /* ── COMPONENT ── */
 export default function Page() {
-  const [activeTab, setActiveTab] = useState(0);
-  const [menuOpen, setMenuOpen]   = useState(false);
-  const [scrolled, setScrolled]   = useState(false);
-  const [lastY, setLastY]         = useState(0);
-  const [navHidden, setNavHidden] = useState(false);
+  const [activeTab, setActiveTab]       = useState(0);
+  const [menuOpen, setMenuOpen]         = useState(false);
+  const [scrolled, setScrolled]         = useState(false);
+  const [navHidden, setNavHidden]       = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
+  // ✅ FIX 1: lastY is now a ref, not state.
+  // Before: useState caused handleScroll to be recreated on every scroll event,
+  // which caused the useEffect to re-register the listener constantly → janky navbar.
+  const lastYRef = useRef(0);
+
+  // ✅ FIX 2: Empty dependency array — handleScroll is now stable and never recreated.
   const handleScroll = useCallback(() => {
     const y = window.scrollY;
     setScrolled(y > 50);
-    if (y > lastY && y > 200) setNavHidden(true);
+    if (y > lastYRef.current && y > 200) setNavHidden(true);
     else setNavHidden(false);
-    setLastY(y);
-  }, [lastY]);
+    lastYRef.current = y;
+  }, []); // ← no deps needed — lastYRef.current is mutable and stable
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+  }, [handleScroll]); // handleScroll is now stable, so this effect runs exactly once
 
-  // close menu on resize to desktop
+  // Close menu on resize to desktop
   useEffect(() => {
     const onResize = () => { if (window.innerWidth > 640) setMenuOpen(false); };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
+
+  // ✅ FIX 3: Active nav link — IntersectionObserver watches each section.
+  // When a section enters the viewport, its nav link gets the "active" class.
+  // Before: the CSS .active class existed but was never applied by JS.
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.url.replace("#", ""));
+
+    const observers = sectionIds.map((id) => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        {
+          // Section is considered "active" when it occupies the middle 40% of the viewport
+          rootMargin: "-30% 0px -60% 0px",
+          threshold: 0,
+        }
+      );
+      obs.observe(el);
+      return obs;
+    });
+
+    return () => {
+      observers.forEach((obs) => obs?.disconnect());
+    };
+  }, []);
+
+  // ✅ FIX 4: Mobile menu closes with a 100ms delay after link tap.
+  // Before: menu closed instantly while smooth scroll fired simultaneously → layout jump.
+  const handleMobileLinkClick = () => {
+    setTimeout(() => setMenuOpen(false), 100);
+  };
 
   return (
     <>
@@ -337,7 +358,15 @@ export default function Page() {
         <nav>
           <ul className="nav-links">
             {navLinks.map((l) => (
-              <li key={l.name}><a href={l.url}>{l.name}</a></li>
+              <li key={l.name}>
+                <a
+                  href={l.url}
+                  // ✅ Active class now applied dynamically based on visible section
+                  className={activeSection === l.url.replace("#", "") ? "active" : ""}
+                >
+                  {l.name}
+                </a>
+              </li>
             ))}
             <li>
               <a href="/amjad_khan_cv.pdf" download="Amjad_Khan_CV.pdf" className="nav-resume-btn">
@@ -346,24 +375,38 @@ export default function Page() {
             </li>
           </ul>
         </nav>
-        <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+        <button
+          className="nav-hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
           {menuOpen ? <IconClose /> : <IconMenu />}
         </button>
       </header>
 
       {/* Mobile menu */}
-      <div className={`mobile-menu-overlay ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(false)} />
+      <div
+        className={`mobile-menu-overlay ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(false)}
+      />
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <nav>
           {navLinks.map((l) => (
-            <a key={l.name} href={l.url} onClick={() => setMenuOpen(false)}>{l.name}</a>
+            <a
+              key={l.name}
+              href={l.url}
+              // ✅ FIX 4 applied: 100ms delay prevents layout jump on mobile
+              onClick={handleMobileLinkClick}
+            >
+              {l.name}
+            </a>
           ))}
         </nav>
         <a
           href="/amjad_khan_cv.pdf"
           download="Amjad_Khan_CV.pdf"
           className="btn-ghost mobile-menu-resume"
-          onClick={() => setMenuOpen(false)}
+          onClick={handleMobileLinkClick}
         >
           Download CV
         </a>
@@ -372,7 +415,14 @@ export default function Page() {
       {/* Left sidebar — social */}
       <div className="sidebar left">
         {socialLinks.map((s) => (
-          <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="sidebar-icon" aria-label={s.name}>
+          <a
+            key={s.name}
+            href={s.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sidebar-icon"
+            aria-label={s.name}
+          >
             {s.icon}
           </a>
         ))}
@@ -380,7 +430,9 @@ export default function Page() {
 
       {/* Right sidebar — email */}
       <div className="sidebar right">
-        <a href="mailto:amjidkhaniuoh@gmail.com" className="email-link">amjidkhaniuoh@gmail.com</a>
+        <a href="mailto:amjidkhaniuoh@gmail.com" className="email-link">
+          amjidkhaniuoh@gmail.com
+        </a>
       </div>
 
       <main>
@@ -408,7 +460,7 @@ export default function Page() {
               <div className="hero-photo-box">
                 <Image
                   src="/profile.png"
-                  alt="Amjad Khan"
+                  alt="Amjad Khan — Senior Flutter Developer"
                   width={280}
                   height={340}
                   priority
@@ -430,7 +482,9 @@ export default function Page() {
             <div className="about-text">
               <p>
                 Hello! I&apos;m Amjad, a Flutter developer who loves crafting fast, elegant mobile apps.
-                I&apos;ve been building for Android &amp; iOS since 2021 — and for the past 3+ years
+                I&apos;ve been building for Android &amp; iOS since 2021 — and for the past{" "}
+                {/* ✅ FIX 5: Updated from "3+ years" to "4+" to match actual 2021 start date */}
+                <strong style={{ color: "var(--lightest-slate)" }}>4+ years</strong>{" "}
                 I&apos;ve been shipping Flutter apps in production across e-commerce, logistics, EV
                 charging, fintech &amp; AI.
               </p>
@@ -466,6 +520,7 @@ export default function Page() {
                     key={e.company}
                     role="tab"
                     aria-selected={activeTab === i}
+                    aria-controls="exp-panel"
                     className={`exp-tab-btn ${activeTab === i ? "active" : ""}`}
                     onClick={() => setActiveTab(i)}
                   >
@@ -473,7 +528,8 @@ export default function Page() {
                   </button>
                 ))}
               </div>
-              <div className="exp-content" role="tabpanel">
+              {/* ✅ aria-controls ID added to panel for accessibility */}
+              <div id="exp-panel" className="exp-content" role="tabpanel">
                 <h3 className="exp-title">
                   {experiences[activeTab].title}{" "}
                   <span>@ {experiences[activeTab].company}</span>
@@ -485,7 +541,9 @@ export default function Page() {
                   {experiences[activeTab].bullets.map((b, i) => <li key={i}>{b}</li>)}
                 </ul>
                 <div className="exp-stack">
-                  {experiences[activeTab].stack.map((s) => <span key={s} className="exp-tag">{s}</span>)}
+                  {experiences[activeTab].stack.map((s) => (
+                    <span key={s} className="exp-tag">{s}</span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -499,7 +557,6 @@ export default function Page() {
             <div className="projects-grid">
               {projects.map((p) => (
                 <div key={p.name} className="project-card">
-                  {/* Header row: folder on left, badge + buttons on right */}
                   <div className="project-card-header">
                     <div className="project-folder"><IconFolder /></div>
                     <div className="project-header-right">
@@ -513,7 +570,6 @@ export default function Page() {
                       )}
                     </div>
                   </div>
-
                   <h3 className="project-name">{p.name}</h3>
                   <p className="project-desc">{p.desc}</p>
                   <ul className="project-tech">
