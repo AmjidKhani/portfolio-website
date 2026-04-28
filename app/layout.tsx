@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+   // apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
 
   openGraph: {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       "Senior Flutter Developer & Mobile Team Lead. 10+ live apps, 50,000+ downloads.",
     type: "website",
     url: "https://amjadkhan.dev",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Amjad Khan — Flutter Developer Portfolio" }],
+  //  images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Amjad Khan — Flutter Developer Portfolio" }],
   },
 
   twitter: {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "Amjad Khan | Senior Flutter Developer",
     description:
       "Senior Flutter Developer & Mobile Team Lead. 10+ live apps, 50,000+ downloads.",
-    images: ["/og-image.png"],
+    //images: ["/og-image.png"],
   },
 };
 
