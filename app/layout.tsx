@@ -15,56 +15,60 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://amjadkhan.dev"),
+  metadataBase: new URL("https://portfolioamjadkhan.netlify.app"),
 
-  title: "Amjad Khan | Senior Flutter Developer",
+  title: "Amjad Khan | Full Stack Developer",
   description:
-    "Senior Flutter Developer & Mobile Team Lead based in Islamabad, Pakistan. 10+ live apps shipped worldwide with 50,000+ total downloads across UK, Gulf & Pakistan.",
+    "Full Stack Developer & Digital Marketing Expert based in Islamabad, Pakistan. Flutter & React Native apps, Next.js storefronts and a Laravel + FastAPI multi-tenant e-commerce SaaS. 10+ live apps with 50,000+ downloads across UK, Gulf & Pakistan.",
 
   keywords: [
+    "Full Stack Developer",
     "Flutter Developer",
-    "Mobile Developer",
-    "Dart",
-    "Android",
-    "iOS",
+    "React Native Developer",
+    "Next.js Developer",
+    "Laravel Developer",
+    "FastAPI",
+    "Multi-tenant SaaS",
+    "E-Commerce Developer",
+    "Meta Ads",
+    "TikTok Ads",
+    "Digital Marketing",
     "Islamabad",
     "Pakistan",
-    "Mobile Team Lead",
-    "GetX",
+    "Mobile Developer",
+    "Dart",
     "Firebase",
-    "BLoC",
-    "Flutter App Developer",
-    "Team Lead",
   ],
 
   authors: [{ name: "Amjad Khan" }],
 
   alternates: {
-    canonical: "https://amjadkhan.dev",
+    canonical: "https://portfolioamjadkhan.netlify.app",
   },
 
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-192.png", type: "image/png", sizes: "192x192" },
     ],
-   // apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 
   openGraph: {
-    title: "Amjad Khan | Senior Flutter Developer",
+    title: "Amjad Khan | Full Stack Developer",
     description:
-      "Senior Flutter Developer & Mobile Team Lead. 10+ live apps, 50,000+ downloads.",
+      "Full Stack Developer & Digital Marketing Expert. Flutter, React Native, Next.js, Laravel + FastAPI. 10+ live apps, 50,000+ downloads.",
     type: "website",
-    url: "https://amjadkhan.dev",
-  //  images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Amjad Khan — Flutter Developer Portfolio" }],
+    url: "https://portfolioamjadkhan.netlify.app",
+  //  images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Amjad Khan — Full Stack Developer Portfolio" }],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Amjad Khan | Senior Flutter Developer",
+    title: "Amjad Khan | Full Stack Developer",
     description:
-      "Senior Flutter Developer & Mobile Team Lead. 10+ live apps, 50,000+ downloads.",
+      "Full Stack Developer & Digital Marketing Expert. Flutter, React Native, Next.js, Laravel + FastAPI. 10+ live apps, 50,000+ downloads.",
     //images: ["/og-image.png"],
   },
 };

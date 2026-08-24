@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amjad Khan — Full Stack Developer — CV</title>
+<style>
+  :root{
+    --accent:#1a6b3c;
+    --ink:#1a1a1a;
+    --muted:#555;
+    --soft:#888;
+    --rule:#cfe3d6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{background:#e7eee9}
+  body{
+    font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color:var(--ink);
+    background:#fff;
+    max-width:800px;
+    margin:24px auto;
+    padding:42px 48px;
+    font-size:13.5px;
+    line-height:1.5;
+    box-shadow:0 2px 24px rgba(0,0,0,.12);
+  }
+
+  h1{font-size:30px;font-weight:800;letter-spacing:-.3px;line-height:1}
+  h1 .g{color:var(--accent)}
+  .title{
+    color:var(--accent);
+    font-weight:700;
+    letter-spacing:1.3px;
+    font-size:12px;
+    text-transform:uppercase;
+    margin:5px 0 9px;
+  }
+  .contact{font-size:12.5px;color:var(--ink);margin-bottom:3px}
+  .contact b{font-weight:700}
+  .contact a{color:var(--accent);text-decoration:none}
+  .contact a:hover{text-decoration:underline}
+  .head-rule{border:none;border-top:2px solid var(--accent);margin:10px 0 0}
+
+  h2{
+    font-size:13px;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+    border-bottom:1.5px solid var(--rule);
+    padding-bottom:4px;
+    margin:17px 0 8px;
+  }
+  p.summary{font-size:13.5px;color:var(--ink)}
+
+  .skill{margin:2px 0;font-size:13px}
+  .skill b{color:var(--ink);font-weight:700}
+
+  .job{margin-top:11px;page-break-inside:avoid}
+  .job:first-of-type{margin-top:4px}
+  .jrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .jtitle{font-weight:700;font-size:14.5px;color:var(--ink)}
+  .jdate{font-weight:700;font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .jco{font-style:italic;color:var(--muted);font-size:12.5px;margin:1px 0 2px}
+  .stack{font-size:12px;color:#6a6a6a;margin-bottom:3px}
+  .stack b{color:#6a6a6a}
+  ul{list-style:none;margin:0}
+  li{position:relative;padding-left:15px;margin-bottom:3px;font-size:13px}
+  li::before{content:"\2022";position:absolute;left:2px;color:var(--accent);font-weight:700}
+  li b{color:var(--ink);font-weight:700}
+  li a{color:var(--accent);text-decoration:none;font-weight:600}
+  li a:hover{text-decoration:underline}
+
+  .apps li{margin-bottom:4px}
+  .apps .tech{color:var(--soft);font-weight:400}
+  .dl{color:var(--muted);font-weight:700;font-size:12px}
+  .sep{color:var(--soft)}
+
+  .plain{color:var(--muted);font-weight:400;text-decoration:none;pointer-events:none;cursor:default}
+  .archive li{margin-bottom:2px;font-size:12px;color:var(--muted)}
+  .archive li b{color:var(--ink)}
+  .note{font-size:11.5px;color:var(--soft);margin-top:3px;padding-left:2px}
+
+  .edu .jrow{margin-bottom:0}
+  .edu .detail{font-size:13px;margin-top:1px}
+
+  @page{size:Letter;margin:11mm 14mm}
+  @media print{
+    html{background:#fff}
+    body{box-shadow:none;margin:0;max-width:none;padding:0;font-size:9.4pt;line-height:1.36}
+    a{color:var(--accent)!important}
+    .plain{color:var(--muted)!important}
+    h1{font-size:24px}
+    .title{margin:4px 0 6px}
+    h2{margin:10px 0 5px}
+    p.summary{font-size:9.4pt}
+    .job{margin-top:7px}
+    .skill{margin:1px 0}
+    li{margin-bottom:2px}
+    section{page-break-inside:auto}
+    .edu,.job{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>AMJAD <span class="g">KHAN</span></h1>
+    <div class="title">Full Stack Developer &nbsp;·&nbsp; Digital Marketing Expert (Meta &amp; TikTok Ads)</div>
+    <div class="contact"><b>Email:</b> <a href="mailto:amjidkhaniuoh@gmail.com">amjidkhaniuoh@gmail.com</a> &nbsp;|&nbsp; <b>Phone:</b> <a href="tel:+923309189520">+92&nbsp;330&nbsp;9189520</a> &nbsp;|&nbsp; Islamabad, Pakistan</div>
+    <div class="contact"><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/amjad-khan-19ba58218/">linkedin.com/in/amjad-khan-19ba58218</a> &nbsp;|&nbsp; <b>GitHub:</b> <a href="https://github.com/AmjidKhani">github.com/AmjidKhani</a></div>
+    <div class="contact"><b>Portfolio:</b> <a href="https://portfolioamjadkhan.netlify.app/">portfolioamjadkhan.netlify.app</a> &nbsp;|&nbsp; <b>Stack Overflow:</b> <a href="https://stackoverflow.com/users/18973165/amjad-khan">stackoverflow.com/users/18973165/amjad-khan</a></div>
+    <hr class="head-rule">
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <p class="summary">Full Stack Developer who owns products end to end — scoping, architecture, build, release and post-launch iteration — working alongside senior engineers and stakeholders. I ship across three surfaces at once: <b>Flutter</b> and <b>React Native</b> mobile apps, <b>Next.js</b> storefronts, and a <b>Laravel + FastAPI</b> multi-tenant e-commerce SaaS handling inventory, warehouses, orders, sellers, multi-store data and staff permissions. 10+ apps live on Play Store &amp; App Store with 50,000+ downloads across UK, Gulf &amp; Pakistan. I also build and run my own products — an e-commerce store, a jobs portal and an agri-tech platform — where I handle paid Meta &amp; TikTok campaigns myself. Agile/Scrum practitioner, open to remote or on-site roles globally.</p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skill"><b>Mobile:</b> Flutter, Dart, React Native, Android, iOS, Play Console &amp; App Store Connect releases</div>
+    <div class="skill"><b>Full-Stack Web:</b> Next.js, React, Node.js, Laravel, PHP, Python, FastAPI, Supabase, PostgreSQL, MySQL</div>
+    <div class="skill"><b>Architecture:</b> Multi-tenant SaaS, Clean Architecture, MVVM, GetX, BLoC, Riverpod, Provider, Redux</div>
+    <div class="skill"><b>Backend &amp; APIs:</b> Firebase, Firestore, REST APIs, GraphQL, FCM, Webhooks, SSR &amp; SEO</div>
+    <div class="skill"><b>Digital Marketing:</b> Meta Ads, TikTok Ads, Pixel &amp; Conversions API, Event Tracking, Retargeting, Creative Testing, ROAS Scaling</div>
+    <div class="skill"><b>AI &amp; Integration:</b> ChatGPT API, AI Integration, Agora, Camera API</div>
+    <div class="skill"><b>Maps &amp; Payments:</b> Google Maps, Stripe, NFC, In-App Purchases, Live GPS, 5+ Payment Gateways</div>
+    <div class="skill"><b>Monetization &amp; DevOps:</b> AdMob, AppLovin, Unity Ads, CI/CD, Git, Figma, Crashlytics</div>
+  </section>
+
+  <section>
+    <h2>Work Experience</h2>
+
+    <div class="job">
+      <div class="jrow"><span class="jtitle">Product Engineer</span><span class="jdate">Dec 2025 – Present</span></div>
+      <div class="jco">EcomPlug &nbsp;·&nbsp; Islamabad, Pakistan &nbsp;·&nbsp; On-site</div>
+      <div class="stack"><b>Stack:</b> Flutter · Dart · React Native · Next.js · React · Laravel · Firebase · REST APIs · Google Maps · GetX · Stripe</div>
+      <ul>
+        <li>Own the product surface end to end — mobile apps, storefront websites and the core platform — running scoping, architecture decisions, code reviews and releases together with senior engineers, across 3 live apps and 6 production websites simultaneously.</li>
+        <li><b><a href="https://ecomplug.com/">EcomPlug</a> — Multi-Tenant E-Commerce SaaS (Laravel + FastAPI):</b> Platform managing product inventory, tenants, warehouses, orders, sellers, multi-store data and staff roles &amp; permissions from a single system.</li>
+        <li><b>Next.js storefronts shipped:</b> <a href="https://zeliy.com/">zeliy.com</a>, <a href="https://uaestyles.com/">uaestyles.com</a>, <a href="https://dressfair.com/ae">dressfair.com/ae</a>, <a href="https://businessarcade.com/ae">businessarcade.com/ae</a>, <a href="https://yumshape.com/">yumshape.com</a>, <a href="https://khanstyle.com/">khanstyle.com</a> — SSR/SEO, multi-currency, Arabic RTL and payment gateway integration.</li>
+        <li><b>DressFair (Flutter &amp; React Native — Play Store &amp; App Store):</b> Full-scale e-commerce for Gulf markets — Arabic RTL, 5+ payment gateways, live order tracking, push notifications and seller management.</li>
+        <li><b>EcomPlug Seller App (Flutter &amp; React Native — Play Store &amp; App Store):</b> Shopify-style seller platform — product &amp; brand management, order dashboard, finance reporting and staff permission controls.</li>
+        <li><b>ShippingPlug (Play Store):</b> Driver management app — live GPS tracking, smart route optimization, digital signature, photo proof-of-delivery and target-based earnings.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jrow"><span class="jtitle">Flutter Developer</span><span class="jdate">Oct 2024 – Dec 2025</span></div>
+      <div class="jco">Proto IT Consultants &nbsp;·&nbsp; Islamabad, Pakistan &nbsp;·&nbsp; Hybrid</div>
+      <div class="stack"><b>Stack:</b> Flutter · Dart · REST APIs · Firebase · AI Integration · Provider</div>
+      <ul>
+        <li><b>Novlt AI (Play Store &amp; App Store):</b> AI content creation platform for influencers — direct publishing to LinkedIn, Facebook, Instagram and TikTok with real-time engagement analytics.</li>
+        <li>Integrated 4+ social media APIs — third-party account linking, real-time analytics sync and full state management across the production codebase.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jrow"><span class="jtitle">App Developer</span><span class="jdate">Apr 2024 – Oct 2024</span></div>
+      <div class="jco">Strahlen Studios &nbsp;·&nbsp; Islamabad, Pakistan &nbsp;·&nbsp; On-site</div>
+      <div class="stack"><b>Stack:</b> Flutter · Dart · Google Maps · Stripe · NFC · Firebase · REST APIs</div>
+      <ul>
+        <li><b>Mobula Ray EV (Live UK — App Store):</b> Full-lifecycle EV charging platform across UK stations — Google Maps locator, slot booking, NFC tap-to-charge, Stripe payments and push notifications.</li>
+        <li>Built real-time REST API sync for live station availability, secure Stripe payment flows and NFC hardware integration for contactless charging.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jrow"><span class="jtitle">Flutter Developer</span><span class="jdate">May 2023 – Apr 2024</span></div>
+      <div class="jco">AHAD Softech LLP &nbsp;·&nbsp; Islamabad, Pakistan &nbsp;·&nbsp; On-site</div>
+      <div class="stack"><b>Stack:</b> Flutter · Dart · Firebase · AdMob · AppLovin · Unity Ads · GetX · Crashlytics · IAP</div>
+      <ul>
+        <li><b>AI Calculator (50,000+ Downloads — Play Store):</b> AI-powered math solver — photo-snap equation detection, scientific calculator, dark mode, monetized via AdMob and AppLovin.</li>
+        <li><b>Status Saver &amp; All Document Reader:</b> WhatsApp status downloader with sticker packs, subscription model and PDF toolkit (merge, split, compress, e-signature) — full ad stack across AdMob, AppLovin, Unity and Facebook Ads.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jrow"><span class="jtitle">Flutter Developer</span><span class="jdate">Jan 2022 – Jan 2023</span></div>
+      <div class="jco">Supportive Hands IT Solutions &nbsp;·&nbsp; Abbottabad, Pakistan &nbsp;·&nbsp; On-site</div>
+      <div class="stack"><b>Stack:</b> Flutter · Dart · REST APIs · Firebase</div>
+      <ul>
+        <li>Built and deployed HR &amp; payroll mobile tools used by 80+ employees — salary calculation (taxes, increments), employee management and progress tracking via Play Store.</li>
+        <li>Full REST API integration, Firebase backend and end-to-end Play Store deployment through Google Play Console.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jrow"><span class="jtitle">Flutter Developer Intern</span><span class="jdate">2021</span></div>
+      <div class="jco">CODEMATICS Inc (IT Park) &nbsp;·&nbsp; Abbottabad, Pakistan</div>
+      <div class="stack"><b>Stack:</b> Flutter · Dart · Google Maps · REST APIs</div>
+      <ul>
+        <li>Built Travel Explorer App end-to-end: Google Maps, nearby places, category filters (Beach, City, Desert, Forest), star ratings and REST API integration.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Live Apps — Flutter &amp; React Native</h2>
+    <ul class="apps">
+      <li><b>DressFair — E-Commerce</b> <span class="tech">(Flutter)</span> <span class="dl">· 50,000+ downloads</span> <span class="sep">—</span> <a href="https://play.google.com/store/apps/details?id=com.dressfair">Play Store</a> <span class="sep">|</span> <a href="https://apps.apple.com/ae/app/dressfair-online-shopping/id1627667071">App Store</a></li>
+      <li><b>Dress Fair Shopping</b> <span class="tech">(React Native)</span> <span class="sep">—</span> <a href="https://play.google.com/store/apps/details?id=com.dressfair.dressfairrnhybrid">Play Store</a> <span class="sep">|</span> <a href="https://apps.apple.com/ae/app/dress-fair-shopping/id6764840409">App Store</a></li>
+      <li><b>BusinessArcade — Online Shopping</b> <span class="tech">(Flutter)</span> <span class="sep">—</span> <a href="https://play.google.com/store/apps/details?id=com.businessArcade">Play Store</a> <span class="sep">|</span> <a href="https://apps.apple.com/ae/app/businessarcade-online-shopping/id1633614073">App Store</a></li>
+      <li><b>EcomPlug Seller App</b> <span class="tech">(Flutter)</span> <span class="sep">—</span> <a href="https://play.google.com/store/apps/details?id=com.dealsarcade.ecomplug.seller">Play Store</a></li>
+      <li><b>EcomPlug Seller</b> <span class="tech">(React Native)</span> <span class="sep">—</span> <a href="https://play.google.com/store/apps/details?id=com.ecomplug.seller">Play Store</a> <span class="sep">|</span> <a href="https://apps.apple.com/ae/app/ecomplug-seller/id6779621122">App Store</a></li>
+      <li><b>ShippingPlug — Driver &amp; Delivery</b> <span class="tech">(Flutter)</span> <span class="sep">—</span> <a href="https://play.google.com/store/apps/details?id=com.arcade.dressfairdriversapp">Play Store</a></li>
+      <li><b>Mobula Ray EV (UK)</b> <span class="tech">(Flutter)</span> <span class="sep">—</span> <a href="https://apps.apple.com/gb/app/mobula-ray-ev/id6477913260">App Store</a></li>
+      <li><b>Novlt AI</b> <span class="tech">(Flutter)</span> <span class="sep">—</span> <a href="https://play.google.com/store/apps/details?id=com.app.nobility">Play Store</a> <span class="sep">|</span> <a href="https://apps.apple.com/us/app/novlt/id6761835088">App Store</a></li>
+      <li><b>AI Calculator — Scan &amp; Solve</b> <span class="tech">(Flutter)</span> <span class="dl">· 50,000+ downloads</span> <span class="sep">—</span> <a href="https://play.google.com/store/apps/details?id=com.ahad.android.calculator">Play Store</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Web &amp; SaaS Projects</h2>
+    <ul class="apps">
+      <li><b>EcomPlug — Multi-Tenant E-Commerce SaaS</b> <span class="tech">(Laravel + FastAPI)</span> <span class="sep">—</span> <a href="https://ecomplug.com/">ecomplug.com</a><br>Inventory, tenants, warehouses, orders, sellers, multi-store data and staff permissions in one platform.</li>
+      <li><b>Next.js storefronts:</b> <a href="https://zeliy.com/">zeliy.com</a> <span class="sep">·</span> <a href="https://uaestyles.com/">uaestyles.com</a> <span class="sep">·</span> <a href="https://dressfair.com/ae">dressfair.com/ae</a> <span class="sep">·</span> <a href="https://businessarcade.com/ae">businessarcade.com/ae</a> <span class="sep">·</span> <a href="https://yumshape.com/">yumshape.com</a> <span class="sep">·</span> <a href="https://khanstyle.com/">khanstyle.com</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Personal Products &amp; Ventures</h2>
+    <ul class="apps">
+      <li><b>Noor e Moti — My Own E-Commerce Store</b> <span class="sep">—</span> <a href="https://nooremoti.store/">nooremoti.store</a><br>Built and operated end to end: storefront, product catalogue, checkout and fulfilment — growth driven by my own paid <b>Meta &amp; TikTok ad campaigns</b> (pixel &amp; events setup, creative testing, retargeting, ROAS scaling).</li>
+      <li><b>MyJobsFeed — Jobs Portal for Pakistan &amp; Gulf</b> <span class="tech">(Python · FastAPI · Next.js · Supabase)</span> <span class="sep">—</span> <a href="https://www.myjobsfeed.com/">myjobsfeed.com</a><br>Aggregates live job listings from across Pakistan and the Gulf in one searchable feed, with organic SEO traffic as the primary growth channel.</li>
+      <li><b>Cropely — Agri-Tech Platform for Farmers</b> <span class="tech">(Next.js)</span> <span class="sep">—</span> <span class="plain">cropely.com</span><br>Live crop and mandi rates plus an online store for pesticides, sprays and farming supplies.</li>
+      <li><b>Freelance Paid Media</b> <span class="sep">—</span> Manage Meta &amp; TikTok ad campaigns for client e-commerce brands: full-funnel setup, conversion tracking, audience building and budget scaling.</li>
+      <li><b>Mind Companion — UI/UX Design</b> <span class="sep">—</span> <a href="https://www.figma.com/design/hgJdr7y6lo8ES4cyauKve5/Mind-companion-Redesign">View Figma Design</a></li>
+    </ul>
+  </section>
+
+  <section class="edu">
+    <h2>Education</h2>
+    <div class="jrow"><span class="jtitle">BSc Software Engineering</span><span class="jdate">2017 – 2021</span></div>
+    <div class="jco">University of Haripur, Pakistan</div>
+    <div class="detail">CGPA: 3.56 / 4.0 &nbsp;·&nbsp; 1st Position Holder &nbsp;·&nbsp; Top of class for 3 consecutive semesters</div>
+  </section>
+
+  <section>
+    <h2>Highlights &amp; Certifications</h2>
+    <ul>
+      <li>10+ live apps published worldwide &nbsp;·&nbsp; 50,000+ total downloads &nbsp;·&nbsp; Apps live in UK, Gulf &amp; Pakistan.</li>
+      <li>6 production Next.js storefronts plus a multi-tenant e-commerce SaaS shipped and maintained.</li>
+      <li><b>Google Digital Marketing &amp; E-Commerce Professional Certificate</b> — Coursera <span class="sep">—</span> <a href="https://coursera.org/share/4aee534aa226bf3c7095e8869047a938">Verify Certificate</a></li>
+      <li>DigiSkills Freelancing Certification (2021) &nbsp;·&nbsp; 3,000+ LinkedIn connections.</li>
+    </ul>
+  </section>
+
+  <section class="archive">
+    <h2>Additional Shipped Products</h2>
+    <ul>
+      <li><b>Status Saver &amp; Sticker Maker</b> <span class="sep">—</span> <span class="plain">play.google.com/store/apps/details?id=com.ahadsoftech.statussaver</span></li>
+      <li><b>All Document Reader &amp; PDF Toolkit</b> <span class="sep">—</span> <span class="plain">play.google.com/store/apps/details?id=com.ahadsoftech.documentreader</span></li>
+      <li><b>HR &amp; Payroll Management Suite</b> <span class="tech">(Supportive Hands IT Solutions — internal, 80+ employees)</span></li>
+      <li><b>Travel Explorer App</b> <span class="tech">(CODEMATICS Inc — Google Maps &amp; REST APIs)</span></li>
+    </ul>
+    <div class="note">Store listings for these have been retired or are internal to the client. Happy to walk through the codebase, architecture and screenshots on request.</div>
+  </section>
+
+</body>
+</html>

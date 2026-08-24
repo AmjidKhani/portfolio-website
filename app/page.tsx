@@ -77,6 +77,17 @@ const IconFigma = () => (
     <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5zm7-3.5h3.5a3.5 3.5 0 1 1 0 7H12V2zm0 8.5h3.5a3.5 3.5 0 1 1 0 7H12v-7zm-7 3.5A3.5 3.5 0 0 1 8.5 10.5H12V17H8.5A3.5 3.5 0 0 1 5 14zm3.5 3.5A3.5 3.5 0 1 1 12 21.5V18H8.5z"/>
   </svg>
 );
+const IconGlobe = () => (
+  <svg viewBox="0 0 24 24" width={14} height={14} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
+const IconAward = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+  </svg>
+);
 
 /* ── DATA ── */
 const navLinks = [
@@ -90,155 +101,263 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { name: "GitHub",         url: "https://github.com/AmjidKhani",                              icon: <IconGitHub /> },
-  { name: "LinkedIn",       url: "https://www.linkedin.com/in/amjad-khan-19ba58218/",          icon: <IconLinkedIn /> },
-  { name: "Stack Overflow", url: "https://stackoverflow.com/users/18973165/amjad-khan",        icon: <IconStackOverflow /> },
-  { name: "Fiverr",         url: "https://www.fiverr.com/amjad_appdev",                        icon: <IconFiverr /> },
+  { name: "GitHub",         url: "https://github.com/AmjidKhani",                       icon: <IconGitHub /> },
+  { name: "LinkedIn",       url: "https://www.linkedin.com/in/amjad-khan-19ba58218/",   icon: <IconLinkedIn /> },
+  { name: "Stack Overflow", url: "https://stackoverflow.com/users/18973165/amjad-khan", icon: <IconStackOverflow /> },
+  { name: "Fiverr",         url: "https://www.fiverr.com/amjad_appdev",                 icon: <IconFiverr /> },
 ];
 
 const experiences = [
   {
-    company: "EcomPlug", title: "Mobile Application Developer & Team Lead",
+    tab: "EcomPlug", company: "EcomPlug", title: "Product Engineer",
     range: "Dec 2025 – Present", location: "Islamabad, Pakistan · On-site",
+    url: "https://ecomplug.com/",
     bullets: [
-      "Team & Development: Leading 2 Flutter developers while remaining hands-on — sprint planning, code reviews, architecture decisions & Agile/Scrum, across 3 simultaneous live products.",
-      "DressFair (Live — Play Store & App Store): Full-scale e-commerce for Gulf markets — Arabic RTL, 5+ payment gateways, live order tracking, coupons, wishlist, push notifications & seller management.",
-      "ShippingPlug (Live — Play Store): Driver delivery management — live GPS tracking, smart route optimization, digital signature capture, photo proof-of-delivery & target-based driver earnings.",
-      "EcomPlug Seller App (Live — Play Store): Shopify-like seller platform — product & brand management, order management, finance dashboard & granular staff permission controls.",
+      "Own the product surface end to end — mobile apps, storefront websites and the core platform — running scoping, architecture decisions, code reviews and releases together with senior engineers, across 3 live apps and 6 production websites simultaneously.",
+      "EcomPlug — Multi-Tenant E-Commerce SaaS (Laravel + FastAPI): Platform managing product inventory, tenants, warehouses, orders, sellers, multi-store data and staff roles & permissions from a single system.",
+      "Next.js storefronts shipped: zeliy.com, uaestyles.com, dressfair.com/ae, businessarcade.com/ae, yumshape.com and khanstyle.com — SSR/SEO, multi-currency, Arabic RTL and payment gateway integration.",
+      "DressFair (Flutter & React Native — Play Store & App Store): Full-scale e-commerce for Gulf markets — Arabic RTL, 5+ payment gateways, live order tracking, push notifications and seller management.",
+      "EcomPlug Seller App (Flutter & React Native — Play Store & App Store): Shopify-style seller platform — product & brand management, order dashboard, finance reporting and staff permission controls.",
+      "ShippingPlug (Play Store): Driver management app — live GPS tracking, smart route optimization, digital signature, photo proof-of-delivery and target-based earnings.",
     ],
-    stack: ["Flutter", "Dart", "Firebase", "REST APIs", "Google Maps", "GetX", "Stripe", "Payment Gateways"],
+    stack: ["Flutter", "Dart", "React Native", "Next.js", "React", "Laravel", "Firebase", "REST APIs", "Google Maps", "GetX", "Stripe"],
   },
   {
-    company: "Proto IT", title: "Flutter Developer",
+    tab: "Proto IT", company: "Proto IT Consultants", title: "Flutter Developer",
     range: "Oct 2024 – Dec 2025", location: "Islamabad, Pakistan · Hybrid",
     bullets: [
-      "Novlt AI (Live — Play Store & App Store): AI-powered content creation for influencers — direct publishing to LinkedIn, Facebook, Instagram & TikTok with real-time engagement analytics & Firebase auth.",
-      "Integrated 4+ social media platform APIs — third-party account linking, real-time analytics sync & full state management across production codebase.",
+      "Novlt AI (Play Store & App Store): AI content creation platform for influencers — direct publishing to LinkedIn, Facebook, Instagram and TikTok with real-time engagement analytics.",
+      "Integrated 4+ social media APIs — third-party account linking, real-time analytics sync and full state management across the production codebase.",
     ],
     stack: ["Flutter", "Dart", "REST APIs", "Firebase", "AI Integration", "Provider"],
   },
   {
-    company: "Strahlen", title: "App Developer",
+    tab: "Strahlen", company: "Strahlen Studios", title: "App Developer",
     range: "Apr 2024 – Oct 2024", location: "Islamabad, Pakistan · On-site",
     bullets: [
-      "Mobula Ray EV (Live UK — Play Store & App Store): Full-lifecycle EV charging platform across UK stations — Google Maps station locator, slot booking, NFC tap-to-charge, Stripe payments & push notifications.",
-      "Real-time REST API sync for live station availability, secure Stripe payment flows & NFC hardware integration for contactless charging.",
+      "Mobula Ray EV (Live UK — App Store): Full-lifecycle EV charging platform across UK stations — Google Maps locator, slot booking, NFC tap-to-charge, Stripe payments and push notifications.",
+      "Built real-time REST API sync for live station availability, secure Stripe payment flows and NFC hardware integration for contactless charging.",
     ],
     stack: ["Flutter", "Dart", "Google Maps", "Stripe", "NFC", "Firebase", "REST APIs"],
   },
   {
-    company: "AHAD Softech", title: "Flutter Developer",
+    tab: "AHAD Softech", company: "AHAD Softech LLP", title: "Flutter Developer",
     range: "May 2023 – Apr 2024", location: "Islamabad, Pakistan · On-site",
     bullets: [
-      "AI Calculator (50,000+ Downloads — Play Store): AI-powered math solver — photo-snap equation detection, scientific calculator, dark mode, monetized via AdMob & AppLovin.",
-      "Status Saver (Demo): WhatsApp & WA Business status downloader — sticker packs, in-app purchases, subscription model, full ad stack (AdMob, AppLovin, Unity, Facebook).",
-      "All Document Reader (Demo): PDF toolkit — merge, split, compress, lock/unlock, image-to-PDF, watermarks, e-signature & multi-language support.",
+      "AI Calculator (50,000+ downloads — Play Store): AI-powered math solver — photo-snap equation detection, scientific calculator, dark mode, monetized via AdMob and AppLovin.",
+      "Status Saver & All Document Reader: WhatsApp status downloader with sticker packs, subscription model and PDF toolkit (merge, split, compress, e-signature) — full ad stack across AdMob, AppLovin, Unity and Facebook Ads.",
     ],
     stack: ["Flutter", "Dart", "Firebase", "AdMob", "AppLovin", "Unity Ads", "GetX", "Crashlytics", "IAP"],
   },
   {
-    company: "Supportive Hands", title: "Flutter Developer",
+    tab: "Supportive Hands", company: "Supportive Hands IT Solutions", title: "Flutter Developer",
     range: "Jan 2022 – Jan 2023", location: "Abbottabad, Pakistan · On-site",
     bullets: [
-      "Built internal HR & business mobile tools — salary calculation (taxes, increments), employee management & progress tracking for 80+ employees.",
-      "REST API consumption, Firebase integration & full Play Store deployment via Google Play Console.",
+      "Built and deployed HR & payroll mobile tools used by 80+ employees — salary calculation (taxes, increments), employee management and progress tracking via Play Store.",
+      "Full REST API integration, Firebase backend and end-to-end Play Store deployment through Google Play Console.",
     ],
     stack: ["Flutter", "Dart", "REST APIs", "Firebase"],
   },
   {
-    company: "CODEMATICS", title: "Flutter Developer Intern",
-    range: "2021", location: "Abbottabad · IT Park",
+    tab: "CODEMATICS", company: "CODEMATICS Inc (IT Park)", title: "Flutter Developer Intern",
+    range: "2021", location: "Abbottabad, Pakistan",
     bullets: [
-      "Travel Explorer App: Destination discovery platform with Google Maps, nearby places, categories (Beach, City, Desert, Forest), star ratings & smooth modern UI.",
-      "Delivered real-world Flutter project end-to-end — UI/UX implementation & REST API integration.",
+      "Built Travel Explorer App end-to-end: Google Maps, nearby places, category filters (Beach, City, Desert, Forest), star ratings and REST API integration.",
     ],
     stack: ["Flutter", "Dart", "Google Maps", "REST APIs"],
   },
 ];
 
-const projects = [
+/* Store URLs below are region-checked — App Store links point at the storefront
+   the app is actually published in, so they resolve instead of 404-ing. */
+const apps = [
   {
     name: "DressFair — E-Commerce",
-    desc: "Full-scale e-commerce for Gulf markets — Arabic RTL, 5+ payment gateways, live order tracking, coupons, wishlist, push notifications & seller management.",
+    desc: "Full-scale e-commerce for Gulf markets — Arabic RTL, 5+ payment gateways, live order tracking, push notifications and seller management.",
     tech: ["Flutter", "Firebase", "GetX", "Stripe", "REST APIs"],
-    badge: "Live",
+    badge: "50K+ Downloads",
     play: "https://play.google.com/store/apps/details?id=com.dressfair",
     ios:  "https://apps.apple.com/ae/app/dressfair-online-shopping/id1627667071",
   },
   {
-    name: "Novlt AI",
-    desc: "AI-powered content creation for influencers — direct publishing to LinkedIn, Facebook, Instagram & TikTok with real-time engagement analytics.",
-    tech: ["Flutter", "AI Integration", "Provider", "Firebase"],
+    name: "Dress Fair Shopping",
+    desc: "React Native build of the DressFair storefront — shared commerce backend, multi-currency checkout and push notifications across Android and iOS.",
+    tech: ["React Native", "Redux", "REST APIs", "Firebase"],
     badge: "Live",
-    play: "https://play.google.com/store/apps/details?id=com.app.nobility",
-    ios:  "https://apps.apple.com/app/novlt-ai/id6738870720",
+    play: "https://play.google.com/store/apps/details?id=com.dressfair.dressfairrnhybrid",
+    ios:  "https://apps.apple.com/ae/app/dress-fair-shopping/id6764840409",
   },
   {
-    name: "Mobula Ray EV (UK)",
-    desc: "Full-lifecycle EV charging platform across UK stations — Google Maps locator, slot booking, NFC tap-to-charge, Stripe payments & push notifications.",
-    tech: ["Flutter", "Google Maps", "NFC", "Stripe", "Firebase"],
-    badge: "Live · UK",
-    play: "https://play.google.com/store/apps/details?id=com.mrevlimited.mantarayev",
-    ios:  "https://apps.apple.com/ie/app/mobula-ray-ev/id6477913260",
-  },
-  {
-    name: "AI Calculator",
-    desc: "50,000+ downloads — AI-powered math solver with photo-snap equation detection, scientific calculator & dark mode. Monetized via AdMob & AppLovin.",
-    tech: ["Flutter", "AdMob", "AppLovin", "AI", "Firebase"],
-    badge: "50K+ Downloads",
-    play: "https://play.google.com/store/apps/details?id=com.ahad.android.calculator",
-  },
-  {
-    name: "ShippingPlug",
-    desc: "Driver delivery management — live GPS tracking, smart route optimization, digital signature capture, photo proof-of-delivery & target-based earnings.",
-    tech: ["Flutter", "Google Maps", "REST APIs", "Firebase"],
+    name: "BusinessArcade — Online Shopping",
+    desc: "Multi-category online shopping app for Gulf markets — catalogue browsing, cart and checkout, order tracking and payment gateway integration.",
+    tech: ["Flutter", "Firebase", "REST APIs", "Payments"],
     badge: "Live",
-    play: "https://play.google.com/store/apps/details?id=com.arcade.dressfairdriversapp",
+    play: "https://play.google.com/store/apps/details?id=com.businessArcade",
+    ios:  "https://apps.apple.com/ae/app/businessarcade-online-shopping/id1633614073",
   },
   {
     name: "EcomPlug Seller App",
-    desc: "Shopify-like seller platform — product & brand management, order management, finance dashboard & granular staff permission controls.",
+    desc: "Shopify-style seller platform — product & brand management, order dashboard, finance reporting and granular staff permission controls.",
     tech: ["Flutter", "GetX", "REST APIs", "Firebase"],
     badge: "Live",
     play: "https://play.google.com/store/apps/details?id=com.dealsarcade.ecomplug.seller",
   },
   {
+    name: "EcomPlug Seller",
+    desc: "React Native seller app on the same multi-tenant platform — inventory, orders and staff roles for sellers on Android and iOS.",
+    tech: ["React Native", "Redux", "REST APIs", "Firebase"],
+    badge: "Live",
+    play: "https://play.google.com/store/apps/details?id=com.ecomplug.seller",
+    ios:  "https://apps.apple.com/ae/app/ecomplug-seller/id6779621122",
+  },
+  {
+    name: "ShippingPlug — Driver & Delivery",
+    desc: "Driver management app — live GPS tracking, smart route optimization, digital signature capture, photo proof-of-delivery and target-based earnings.",
+    tech: ["Flutter", "Google Maps", "REST APIs", "Firebase"],
+    badge: "Live",
+    play: "https://play.google.com/store/apps/details?id=com.arcade.dressfairdriversapp",
+  },
+  {
+    name: "Mobula Ray EV (UK)",
+    desc: "Full-lifecycle EV charging platform across UK stations — Google Maps locator, slot booking, NFC tap-to-charge, Stripe payments and push notifications.",
+    tech: ["Flutter", "Google Maps", "NFC", "Stripe", "Firebase"],
+    badge: "Live · UK",
+    ios: "https://apps.apple.com/gb/app/mobula-ray-ev/id6477913260",
+  },
+  {
+    name: "Novlt AI",
+    desc: "AI content creation platform for influencers — direct publishing to LinkedIn, Facebook, Instagram and TikTok with real-time engagement analytics.",
+    tech: ["Flutter", "AI Integration", "Provider", "Firebase"],
+    badge: "Live",
+    play: "https://play.google.com/store/apps/details?id=com.app.nobility",
+    ios:  "https://apps.apple.com/us/app/novlt/id6761835088",
+  },
+  {
+    name: "AI Calculator — Scan & Solve",
+    desc: "AI-powered math solver — photo-snap equation detection, scientific calculator and dark mode, monetized via AdMob and AppLovin.",
+    tech: ["Flutter", "AdMob", "AppLovin", "AI", "Firebase"],
+    badge: "50K+ Downloads",
+    play: "https://play.google.com/store/apps/details?id=com.ahad.android.calculator",
+  },
+];
+
+const storefronts = [
+  { label: "zeliy.com",            url: "https://zeliy.com/" },
+  { label: "uaestyles.com",        url: "https://uaestyles.com/" },
+  { label: "dressfair.com/ae",     url: "https://dressfair.com/ae" },
+  { label: "businessarcade.com/ae", url: "https://businessarcade.com/ae" },
+  { label: "yumshape.com",         url: "https://yumshape.com/" },
+  { label: "khanstyle.com",        url: "https://khanstyle.com/" },
+];
+
+const webProjects = [
+  {
+    name: "EcomPlug — Multi-Tenant E-Commerce SaaS",
+    desc: "Platform managing product inventory, tenants, warehouses, orders, sellers, multi-store data and staff roles & permissions from a single system.",
+    tech: ["Laravel", "FastAPI", "PHP", "Python", "MySQL", "Multi-tenant"],
+    badge: "SaaS",
+    links: [{ label: "ecomplug.com", url: "https://ecomplug.com/" }],
+  },
+  {
+    name: "Next.js Storefronts",
+    desc: "Six production storefronts shipped and maintained — SSR/SEO, multi-currency, Arabic RTL and payment gateway integration.",
+    tech: ["Next.js", "React", "SSR & SEO", "Arabic RTL", "Payments"],
+    badge: "6 Live Sites",
+    links: storefronts,
+  },
+];
+
+const ventures = [
+  {
+    name: "Noor e Moti",
+    desc: "My own e-commerce store, built and operated end to end: storefront, product catalogue, checkout and fulfilment — growth driven by my own paid Meta & TikTok campaigns (pixel & events setup, creative testing, retargeting, ROAS scaling).",
+    tech: ["E-Commerce", "Meta Ads", "TikTok Ads", "Pixel & CAPI"],
+    badge: "My Store",
+    links: [{ label: "nooremoti.store", url: "https://nooremoti.store/" }],
+  },
+  {
+    name: "MyJobsFeed",
+    desc: "Jobs portal for Pakistan & the Gulf — aggregates live job listings into one searchable feed, with organic SEO traffic as the primary growth channel.",
+    tech: ["Python", "FastAPI", "Next.js", "Supabase", "SEO"],
+    badge: "My Product",
+    links: [{ label: "myjobsfeed.com", url: "https://www.myjobsfeed.com/" }],
+  },
+  {
+    name: "Cropely",
+    desc: "Agri-tech platform for farmers — live crop and mandi rates plus an online store for pesticides, sprays and farming supplies.",
+    tech: ["Next.js", "React", "SEO"],
+    badge: "My Product",
+    note: "cropely.com — currently offline",
+  },
+  {
+    name: "Freelance Paid Media",
+    desc: "Meta & TikTok ad campaigns for client e-commerce brands — full-funnel setup, conversion tracking, audience building and budget scaling.",
+    tech: ["Meta Ads", "TikTok Ads", "Conversions API", "ROAS Scaling"],
+    badge: "Freelance",
+  },
+  {
     name: "Mind Companion",
-    desc: "Mental wellness companion app — designed with a focus on calming UX, mood tracking, and mindfulness exercises. UI/UX concept in Figma.",
-    tech: ["Flutter", "Firebase", "Provider", "Figma"],
+    desc: "Mental wellness companion app — UI/UX redesign focused on calming visual language, mood tracking and mindfulness flows.",
+    tech: ["Figma", "UI/UX", "Product Design"],
     badge: "Figma Design",
     figma: "https://www.figma.com/design/hgJdr7y6lo8ES4cyauKve5/Mind-companion-Redesign",
   },
 ];
 
+/* Listings retired or internal to the client — deliberately not linked. */
+const archiveProjects = [
+  { name: "Status Saver & Sticker Maker",   detail: "WhatsApp status downloader — sticker packs, subscriptions, full ad stack" },
+  { name: "All Document Reader & PDF Toolkit", detail: "Merge, split, compress, lock/unlock, image-to-PDF, watermarks, e-signature" },
+  { name: "HR & Payroll Management Suite",  detail: "Supportive Hands IT Solutions — internal, used by 80+ employees" },
+  { name: "Travel Explorer App",            detail: "CODEMATICS Inc — Google Maps, nearby places & REST APIs" },
+];
+
 const skillGroups = [
-  { label: "Core Mobile",           skills: ["Flutter", "Dart", "Android", "iOS"] },
-  { label: "State Management",      skills: ["GetX", "BLoC", "Riverpod", "Provider", "MVVM", "Clean Arch"] },
-  { label: "Backend & APIs",        skills: ["Firebase", "REST APIs", "Firestore", "GraphQL", "FCM"] },
-  { label: "AI & Integration",      skills: ["ChatGPT API", "AI Integration", "Agora", "Camera API", "Cursor AI"] },
-  { label: "Maps & Payments",       skills: ["Google Maps", "Stripe", "NFC", "IAP", "Live GPS"] },
+  { label: "Mobile",                skills: ["Flutter", "Dart", "React Native", "Android", "iOS", "Play Console", "App Store Connect"] },
+  { label: "Full-Stack Web",        skills: ["Next.js", "React", "Node.js", "Laravel", "PHP", "Python", "FastAPI", "Supabase", "PostgreSQL", "MySQL"] },
+  { label: "Architecture",          skills: ["Multi-tenant SaaS", "Clean Architecture", "MVVM", "GetX", "BLoC", "Riverpod", "Provider", "Redux"] },
+  { label: "Backend & APIs",        skills: ["Firebase", "Firestore", "REST APIs", "GraphQL", "FCM", "Webhooks", "SSR & SEO"] },
+  { label: "Digital Marketing",     skills: ["Meta Ads", "TikTok Ads", "Pixel & CAPI", "Event Tracking", "Retargeting", "Creative Testing", "ROAS Scaling"] },
+  { label: "AI & Integration",      skills: ["ChatGPT API", "AI Integration", "Agora", "Camera API"] },
+  { label: "Maps & Payments",       skills: ["Google Maps", "Stripe", "NFC", "In-App Purchases", "Live GPS", "5+ Payment Gateways"] },
   { label: "Monetization & DevOps", skills: ["AdMob", "AppLovin", "Unity Ads", "CI/CD", "Git", "Figma", "Crashlytics"] },
-  { label: "Web (Basic)",           skills: ["HTML/CSS", "React.js", "Next.js", "Python"] },
 ];
 
 const highlights = [
   "10+ live apps published worldwide",
   "50,000+ total app downloads",
-  "Apps live in Gulf, UK & Pakistan",
-  "Leading team & staying hands-on",
+  "Apps live in UK, Gulf & Pakistan",
+  "6 production Next.js storefronts",
+  "Multi-tenant e-commerce SaaS shipped",
+  "I run my own Meta & TikTok campaigns",
   "3,000+ LinkedIn connections",
-  "DigiSkills Freelancing Cert. (2021)",
   "BSc CGPA: 3.56/4.0 · 1st Position",
 ];
 
-/* ── Store Button Component ── */
-function StoreButton({ type, url }: { type: "play" | "ios" | "figma"; url: string }) {
+const certifications = [
+  {
+    name: "Google Digital Marketing & E-Commerce Professional Certificate",
+    issuer: "Coursera",
+    url: "https://coursera.org/share/4aee534aa226bf3c7095e8869047a938",
+    action: "Verify Certificate",
+  },
+  {
+    name: "DigiSkills Freelancing Certification",
+    issuer: "DigiSkills · 2021",
+  },
+];
+
+/* ── Link Button Component ── */
+type LinkButtonType = "play" | "ios" | "figma" | "web";
+
+function LinkButton({ type, url, label }: { type: LinkButtonType; url: string; label?: string }) {
   const [hovered, setHovered] = useState(false);
 
   const configs = {
     play:  { icon: <IconAndroid />, label: "Play Store" },
     ios:   { icon: <IconApple />,   label: "App Store" },
     figma: { icon: <IconFigma />,   label: "Figma" },
+    web:   { icon: <IconGlobe />,   label: "Visit Site" },
   };
 
   const cfg = configs[type];
@@ -250,7 +369,9 @@ function StoreButton({ type, url }: { type: "play" | "ios" | "figma"; url: strin
       rel="noopener noreferrer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="store-button"
+      // Web links keep their label on small screens — the domain *is* the content,
+      // whereas the Play/App Store glyphs still read on their own.
+      className={`store-button${type === "web" ? " store-button--web" : ""}`}
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -276,8 +397,63 @@ function StoreButton({ type, url }: { type: "play" | "ios" | "figma"; url: strin
       <span style={{ display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 0 }}>
         {cfg.icon}
       </span>
-      <span className="store-button-label">{cfg.label}</span>
+      <span className="store-button-label">{label ?? cfg.label}</span>
     </a>
+  );
+}
+
+/* ── Project Card Component ── */
+type ProjectCardProps = {
+  name: string;
+  desc: string;
+  tech: string[];
+  badge: string;
+  play?: string;
+  ios?: string;
+  figma?: string;
+  note?: string;
+  links?: { label: string; url: string }[];
+};
+
+function ProjectCard({ name, desc, tech, badge, play, ios, figma, note, links }: ProjectCardProps) {
+  // A long list of site links wraps badly beside the badge, so it gets its own
+  // full-width row under the description instead.
+  const headerLinks = links && links.length <= 2 ? links : undefined;
+  const bodyLinks   = links && links.length > 2  ? links : undefined;
+  const hasHeaderButtons = Boolean(play || ios || figma || headerLinks?.length);
+
+  return (
+    <div className="project-card">
+      <div className="project-card-header">
+        <div className="project-folder"><IconFolder /></div>
+        <div className="project-header-right">
+          <span className="project-badge">{badge}</span>
+          {hasHeaderButtons && (
+            <div className="project-store-buttons">
+              {play  && <LinkButton type="play"  url={play}  />}
+              {ios   && <LinkButton type="ios"   url={ios}   />}
+              {figma && <LinkButton type="figma" url={figma} />}
+              {headerLinks?.map((l) => (
+                <LinkButton key={l.url} type="web" url={l.url} label={l.label} />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+      <h3 className="project-name">{name}</h3>
+      <p className="project-desc">{desc}</p>
+      {note && <p className="project-note">{note}</p>}
+      {bodyLinks && (
+        <div className="project-links">
+          {bodyLinks.map((l) => (
+            <LinkButton key={l.url} type="web" url={l.url} label={l.label} />
+          ))}
+        </div>
+      )}
+      <ul className="project-tech">
+        {tech.map((t) => <li key={t}><span>{t}</span></li>)}
+      </ul>
+    </div>
   );
 }
 
@@ -349,6 +525,8 @@ export default function Page() {
   const handleMobileLinkClick = () => {
     setTimeout(() => setMenuOpen(false), 100);
   };
+
+  const exp = experiences[activeTab];
 
   return (
     <>
@@ -443,13 +621,14 @@ export default function Page() {
             <div className="hero-left">
               <p className="hero-greeting fade-in delay-1">Hi, my name is</p>
               <h1 className="hero-name fade-in delay-2">Amjad Khan.</h1>
-              <h2 className="hero-title fade-in delay-3">I build mobile experiences.</h2>
+              <h2 className="hero-title fade-in delay-3">I build products end to end.</h2>
               <p className="hero-desc fade-in delay-4">
-                I&apos;m a Senior Flutter Developer &amp; Mobile Team Lead based in Islamabad, Pakistan.
-                With <strong style={{ color: "var(--lightest-slate)" }}>10+ live apps</strong> and{" "}
-                <strong style={{ color: "var(--lightest-slate)" }}>50,000+ downloads</strong> across UK,
-                Gulf &amp; Pakistan — I lead teams and ship production apps in e-commerce, logistics,
-                fintech &amp; AI.
+                I&apos;m a Full Stack Developer based in Islamabad, Pakistan, shipping{" "}
+                <strong style={{ color: "var(--lightest-slate)" }}>Flutter &amp; React Native</strong> apps,{" "}
+                <strong style={{ color: "var(--lightest-slate)" }}>Next.js</strong> storefronts and a{" "}
+                <strong style={{ color: "var(--lightest-slate)" }}>Laravel + FastAPI</strong>{" "}
+                multi-tenant e-commerce SaaS. 10+ live apps and 50,000+ downloads across UK, Gulf
+                &amp; Pakistan — and I run my own Meta &amp; TikTok campaigns.
               </p>
               <div className="hero-cta fade-in delay-5">
                 <a href="#contact" className="btn-primary">Get In Touch</a>
@@ -460,7 +639,7 @@ export default function Page() {
               <div className="hero-photo-box">
                 <Image
                   src="/profile.png"
-                  alt="Amjad Khan — Senior Flutter Developer"
+                  alt="Amjad Khan — Full Stack Developer"
                   width={280}
                   height={340}
                   priority
@@ -481,23 +660,26 @@ export default function Page() {
             <h2 className="numbered-heading"><span className="num">01.</span>About Me</h2>
             <div className="about-text">
               <p>
-                Hello! I&apos;m Amjad, a Flutter developer who loves crafting fast, elegant mobile apps.
-                I&apos;ve been building for Android &amp; iOS since 2021 — and for the past{" "}
-                {/* ✅ FIX 5: Updated from "3+ years" to "4+" to match actual 2021 start date */}
-                <strong style={{ color: "var(--lightest-slate)" }}>4+ years</strong>{" "}
-                I&apos;ve been shipping Flutter apps in production across e-commerce, logistics, EV
-                charging, fintech &amp; AI.
+                Hello! I&apos;m Amjad, a Full Stack Developer who owns products end to end — scoping,
+                architecture, build, release and post-launch iteration — working alongside senior
+                engineers and stakeholders. I&apos;ve been shipping since 2021, and today I ship across
+                three surfaces at once: mobile apps, storefront websites and the platform behind them.
               </p>
               <p>
                 Currently I&apos;m a{" "}
-                <span style={{ color: "var(--green)" }}>Mobile Application Developer &amp; Team Lead</span>{" "}
-                at <a href="https://ecomplug.com" target="_blank" rel="noopener noreferrer">EcomPlug</a>,
-                where I lead 2 Flutter developers across 3 simultaneous live products while staying
-                hands-on with production code.
+                <span style={{ color: "var(--green)" }}>Product Engineer</span> at{" "}
+                <a href="https://ecomplug.com/" target="_blank" rel="noopener noreferrer">EcomPlug</a>,
+                where I run <strong style={{ color: "var(--lightest-slate)" }}>3 live apps</strong> and{" "}
+                <strong style={{ color: "var(--lightest-slate)" }}>6 production websites</strong>{" "}
+                simultaneously — plus a Laravel + FastAPI multi-tenant SaaS handling inventory,
+                warehouses, orders, sellers, multi-store data and staff permissions.
               </p>
               <p>
-                I care about clean architecture, scalable code, and delightful user experiences.
-                Agile/Scrum practitioner — open to remote roles &amp; relocation.
+                I also build and run my own products — an e-commerce store, a jobs portal and an
+                agri-tech platform — where I handle the paid{" "}
+                <strong style={{ color: "var(--lightest-slate)" }}>Meta &amp; TikTok</strong> campaigns
+                myself: pixel and events setup, creative testing, retargeting and ROAS scaling.
+                Agile/Scrum practitioner, open to remote or on-site roles globally.
               </p>
               <p style={{ marginBottom: 8, color: "var(--lightest-slate)", fontWeight: 600 }}>
                 A few highlights:
@@ -517,31 +699,36 @@ export default function Page() {
               <div className="exp-tabs" role="tablist">
                 {experiences.map((e, i) => (
                   <button
-                    key={e.company}
+                    key={e.tab}
                     role="tab"
                     aria-selected={activeTab === i}
                     aria-controls="exp-panel"
                     className={`exp-tab-btn ${activeTab === i ? "active" : ""}`}
                     onClick={() => setActiveTab(i)}
                   >
-                    {e.company}
+                    {e.tab}
                   </button>
                 ))}
               </div>
               {/* ✅ aria-controls ID added to panel for accessibility */}
               <div id="exp-panel" className="exp-content" role="tabpanel">
                 <h3 className="exp-title">
-                  {experiences[activeTab].title}{" "}
-                  <span>@ {experiences[activeTab].company}</span>
+                  {exp.title}{" "}
+                  <span>
+                    @{" "}
+                    {exp.url
+                      ? <a href={exp.url} target="_blank" rel="noopener noreferrer">{exp.company}</a>
+                      : exp.company}
+                  </span>
                 </h3>
                 <p className="exp-range">
-                  {experiences[activeTab].range}&nbsp;·&nbsp;{experiences[activeTab].location}
+                  {exp.range}&nbsp;·&nbsp;{exp.location}
                 </p>
                 <ul className="exp-bullets">
-                  {experiences[activeTab].bullets.map((b, i) => <li key={i}>{b}</li>)}
+                  {exp.bullets.map((b, i) => <li key={i}>{b}</li>)}
                 </ul>
                 <div className="exp-stack">
-                  {experiences[activeTab].stack.map((s) => (
+                  {exp.stack.map((s) => (
                     <span key={s} className="exp-tag">{s}</span>
                   ))}
                 </div>
@@ -554,30 +741,43 @@ export default function Page() {
         <section id="projects">
           <div className="section-container">
             <h2 className="numbered-heading"><span className="num">03.</span>Some Things I&apos;ve Built</h2>
+
+            <h3 className="project-group-title">
+              Live Apps <span>Flutter &amp; React Native</span>
+            </h3>
             <div className="projects-grid">
-              {projects.map((p) => (
-                <div key={p.name} className="project-card">
-                  <div className="project-card-header">
-                    <div className="project-folder"><IconFolder /></div>
-                    <div className="project-header-right">
-                      <span className="project-badge">{p.badge}</span>
-                      {(p.play || p.ios || p.figma) && (
-                        <div className="project-store-buttons">
-                          {p.play  && <StoreButton type="play"  url={p.play}  />}
-                          {p.ios   && <StoreButton type="ios"   url={p.ios}   />}
-                          {p.figma && <StoreButton type="figma" url={p.figma} />}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-name">{p.name}</h3>
-                  <p className="project-desc">{p.desc}</p>
-                  <ul className="project-tech">
-                    {p.tech.map((t) => <li key={t}><span>{t}</span></li>)}
-                  </ul>
-                </div>
-              ))}
+              {apps.map((p) => <ProjectCard key={p.name} {...p} />)}
             </div>
+
+            <h3 className="project-group-title">
+              Web &amp; SaaS <span>Next.js · Laravel · FastAPI</span>
+            </h3>
+            <div className="projects-grid">
+              {webProjects.map((p) => <ProjectCard key={p.name} {...p} />)}
+            </div>
+
+            <h3 className="project-group-title">
+              Personal Products &amp; Ventures <span>Built and run by me</span>
+            </h3>
+            <div className="projects-grid">
+              {ventures.map((p) => <ProjectCard key={p.name} {...p} />)}
+            </div>
+
+            <h3 className="project-group-title">
+              Additional Shipped Products <span>Listings retired or internal</span>
+            </h3>
+            <ul className="archive-list">
+              {archiveProjects.map((a) => (
+                <li key={a.name}>
+                  <strong>{a.name}</strong>
+                  <span>{a.detail}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="archive-note">
+              Store listings for these have been retired or are internal to the client. Happy to walk
+              through the codebase, architecture and screenshots on request.
+            </p>
           </div>
         </section>
 
@@ -601,7 +801,7 @@ export default function Page() {
         {/* ══════════ EDUCATION ══════════ */}
         <section id="education">
           <div className="section-container">
-            <h2 className="numbered-heading"><span className="num">05.</span>Education</h2>
+            <h2 className="numbered-heading"><span className="num">05.</span>Education &amp; Certifications</h2>
             <div className="edu-card">
               <h3 className="edu-degree">BSc Software Engineering</h3>
               <p className="edu-university">University of Haripur, Pakistan</p>
@@ -615,6 +815,28 @@ export default function Page() {
                 consecutive semesters. Focused on software engineering principles, mobile application
                 development, and systems design.
               </p>
+            </div>
+
+            <div className="cert-list">
+              {certifications.map((c) => (
+                <div key={c.name} className="cert-card">
+                  <span className="cert-icon"><IconAward /></span>
+                  <div className="cert-body">
+                    <p className="cert-name">{c.name}</p>
+                    <p className="cert-issuer">{c.issuer}</p>
+                  </div>
+                  {c.url && (
+                    <a
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cert-link"
+                    >
+                      {c.action}
+                    </a>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>
