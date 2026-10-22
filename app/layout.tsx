@@ -17,12 +17,12 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolioamjadkhan.netlify.app"),
 
-  title: "Amjad Khan | Full Stack Developer",
+  title: "Amjad Khan | Software Engineer",
   description:
-    "Full Stack Developer & Digital Marketing Expert based in Islamabad, Pakistan. Flutter & React Native apps, Next.js storefronts and a Laravel + FastAPI multi-tenant e-commerce SaaS. 10+ live apps with 50,000+ downloads across UK, Gulf & Pakistan.",
+    "Software Engineer & Performance Marketer based in Islamabad, Pakistan. Flutter & React Native apps, Next.js storefronts and a Laravel + FastAPI multi-tenant e-commerce SaaS. 10+ live apps, 8 Next.js storefronts and $2M+ client revenue through performance marketing.",
 
   keywords: [
-    "Full Stack Developer",
+    "Software Engineer",
     "Flutter Developer",
     "React Native Developer",
     "Next.js Developer",
@@ -56,19 +56,19 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Amjad Khan | Full Stack Developer",
+    title: "Amjad Khan | Software Engineer",
     description:
-      "Full Stack Developer & Digital Marketing Expert. Flutter, React Native, Next.js, Laravel + FastAPI. 10+ live apps, 50,000+ downloads.",
+      "Software Engineer & Performance Marketer. Flutter, React Native, Next.js, Laravel + FastAPI. 10+ live apps, 8 storefronts and $2M+ client revenue.",
     type: "website",
     url: "https://portfolioamjadkhan.netlify.app",
-  //  images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Amjad Khan — Full Stack Developer Portfolio" }],
+  //  images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Amjad Khan — Software Engineer Portfolio" }],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Amjad Khan | Full Stack Developer",
+    title: "Amjad Khan | Software Engineer",
     description:
-      "Full Stack Developer & Digital Marketing Expert. Flutter, React Native, Next.js, Laravel + FastAPI. 10+ live apps, 50,000+ downloads.",
+      "Software Engineer & Performance Marketer. Flutter, React Native, Next.js, Laravel + FastAPI. 10+ live apps, 8 storefronts and $2M+ client revenue.",
     //images: ["/og-image.png"],
   },
 };

@@ -95,6 +95,7 @@ const navLinks = [
   { name: "About",      url: "#about" },
   { name: "Experience", url: "#experience" },
   { name: "Projects",   url: "#projects" },
+  { name: "Marketing",  url: "#marketing" },
   { name: "Skills",     url: "#skills" },
   { name: "Education",  url: "#education" },
   { name: "Contact",    url: "#contact" },
@@ -109,27 +110,27 @@ const socialLinks = [
 
 const experiences = [
   {
-    tab: "EcomPlug", company: "EcomPlug", title: "Product Engineer",
+    tab: "EcomPlug", company: "EcomPlug", title: "Product Engineer & Senior eCommerce Performance Marketer",
     range: "Dec 2025 – Present", location: "Islamabad, Pakistan · On-site",
     url: "https://ecomplug.com/",
     bullets: [
-      "Own the product surface end to end — mobile apps, storefront websites and the core platform — running scoping, architecture decisions, code reviews and releases together with senior engineers, across 3 live apps and 6 production websites simultaneously.",
+      "Own the product surface end to end — mobile apps, storefront websites and the core platform — running scoping, architecture decisions, code reviews and releases together with senior engineers, across mobile apps and 8 production storefronts, with FastAPI and AWS EC2 & S3 powering the backend.",
       "EcomPlug — Multi-Tenant E-Commerce SaaS (Laravel + FastAPI): Platform managing product inventory, tenants, warehouses, orders, sellers, multi-store data and staff roles & permissions from a single system.",
-      "Next.js storefronts shipped: zeliy.com, uaestyles.com, dressfair.com/ae, businessarcade.com/ae, yumshape.com and khanstyle.com — SSR/SEO, multi-currency, Arabic RTL and payment gateway integration.",
+      "Next.js storefronts shipped: zeliy.com, uaestyles.com, dressfair.com/ae, businessarcade.com/ae, yumshape.com, khanstyle.com, adeenaperfume.com and maxola.ae — SSR/SEO, multi-currency, Arabic RTL and payment gateway integration.",
       "DressFair (Flutter & React Native — Play Store & App Store): Full-scale e-commerce for Gulf markets — Arabic RTL, 5+ payment gateways, live order tracking, push notifications and seller management.",
       "EcomPlug Seller App (Flutter & React Native — Play Store & App Store): Shopify-style seller platform — product & brand management, order dashboard, finance reporting and staff permission controls.",
       "ShippingPlug (Play Store): Driver management app — live GPS tracking, smart route optimization, digital signature, photo proof-of-delivery and target-based earnings.",
     ],
-    stack: ["Flutter", "Dart", "React Native", "Next.js", "React", "Laravel", "Firebase", "REST APIs", "Google Maps", "GetX", "Stripe"],
+    stack: ["Flutter", "React Native", "Next.js", "FastAPI", "AWS EC2", "AWS S3", "Laravel", "Meta Ads", "TikTok Ads"],
   },
   {
-    tab: "Proto IT", company: "Proto IT Consultants", title: "Flutter Developer",
+    tab: "Proto IT", company: "Proto IT Consultants", title: "Full Stack Developer",
     range: "Oct 2024 – Dec 2025", location: "Islamabad, Pakistan · Hybrid",
     bullets: [
       "Novlt AI (Play Store & App Store): AI content creation platform for influencers — direct publishing to LinkedIn, Facebook, Instagram and TikTok with real-time engagement analytics.",
       "Integrated 4+ social media APIs — third-party account linking, real-time analytics sync and full state management across the production codebase.",
     ],
-    stack: ["Flutter", "Dart", "REST APIs", "Firebase", "AI Integration", "Provider"],
+    stack: ["Flutter", "Next.js", "REST APIs", "AI Integration"],
   },
   {
     tab: "Strahlen", company: "Strahlen Studios", title: "App Developer",
@@ -150,26 +151,18 @@ const experiences = [
     stack: ["Flutter", "Dart", "Firebase", "AdMob", "AppLovin", "Unity Ads", "GetX", "Crashlytics", "IAP"],
   },
   {
-    tab: "Supportive Hands", company: "Supportive Hands IT Solutions", title: "Flutter Developer",
+    tab: "Supportive Hands", company: "Supportive Hands IT Solutions", title: "Web Developer",
     range: "Jan 2022 – Jan 2023", location: "Abbottabad, Pakistan · On-site",
     bullets: [
-      "Built and deployed HR & payroll mobile tools used by 80+ employees — salary calculation (taxes, increments), employee management and progress tracking via Play Store.",
-      "Full REST API integration, Firebase backend and end-to-end Play Store deployment through Google Play Console.",
+      "Built and deployed web HR & payroll tools for 80+ employees — salary calculation, employee management and progress tracking using PHP, Laravel, MySQL and REST APIs.",
+      "Integrated REST APIs and database-backed payroll workflows for internal operations.",
     ],
-    stack: ["Flutter", "Dart", "REST APIs", "Firebase"],
+    stack: ["PHP", "Laravel", "MySQL", "REST APIs"],
   },
-  {
-    tab: "CODEMATICS", company: "CODEMATICS Inc (IT Park)", title: "Flutter Developer Intern",
-    range: "2021", location: "Abbottabad, Pakistan",
-    bullets: [
-      "Built Travel Explorer App end-to-end: Google Maps, nearby places, category filters (Beach, City, Desert, Forest), star ratings and REST API integration.",
-    ],
-    stack: ["Flutter", "Dart", "Google Maps", "REST APIs"],
-  },
+
 ];
 
-/* Store URLs below are region-checked — App Store links point at the storefront
-   the app is actually published in, so they resolve instead of 404-ing. */
+/* Store URLs are taken from the supplied CV where available. */
 const apps = [
   {
     name: "DressFair — E-Commerce",
@@ -193,7 +186,7 @@ const apps = [
     tech: ["Flutter", "Firebase", "REST APIs", "Payments"],
     badge: "Live",
     play: "https://play.google.com/store/apps/details?id=com.businessArcade",
-    ios:  "https://apps.apple.com/ae/app/businessarcade-online-shopping/id1633614073",
+    ios:  "https://apps.apple.com/us/app/businessarcade-online-shopping/id1633614073",
   },
   {
     name: "EcomPlug Seller App",
@@ -208,7 +201,7 @@ const apps = [
     tech: ["React Native", "Redux", "REST APIs", "Firebase"],
     badge: "Live",
     play: "https://play.google.com/store/apps/details?id=com.ecomplug.seller",
-    ios:  "https://apps.apple.com/ae/app/ecomplug-seller/id6779621122",
+    ios:  "https://apps.apple.com/us/app/ecomplug-seller/id6779621122",
   },
   {
     name: "ShippingPlug — Driver & Delivery",
@@ -222,7 +215,8 @@ const apps = [
     desc: "Full-lifecycle EV charging platform across UK stations — Google Maps locator, slot booking, NFC tap-to-charge, Stripe payments and push notifications.",
     tech: ["Flutter", "Google Maps", "NFC", "Stripe", "Firebase"],
     badge: "Live · UK",
-    ios: "https://apps.apple.com/gb/app/mobula-ray-ev/id6477913260",
+    play: "https://play.google.com/store/apps/details?id=com.mrevlimited.mantarayev",
+    ios: "https://apps.apple.com/ie/app/mobula-ray-ev/id6477913260",
   },
   {
     name: "Novlt AI",
@@ -230,7 +224,7 @@ const apps = [
     tech: ["Flutter", "AI Integration", "Provider", "Firebase"],
     badge: "Live",
     play: "https://play.google.com/store/apps/details?id=com.app.nobility",
-    ios:  "https://apps.apple.com/us/app/novlt/id6761835088",
+    ios:  "https://apps.apple.com/pk/app/novlt-ai-social-media-content/id6477768239",
   },
   {
     name: "AI Calculator — Scan & Solve",
@@ -248,6 +242,8 @@ const storefronts = [
   { label: "businessarcade.com/ae", url: "https://businessarcade.com/ae" },
   { label: "yumshape.com",         url: "https://yumshape.com/" },
   { label: "khanstyle.com",        url: "https://khanstyle.com/" },
+  { label: "adeenaperfume.com", url: "https://adeenaperfume.com/" },
+  { label: "maxola.ae", url: "https://maxola.ae/" },
 ];
 
 const webProjects = [
@@ -260,9 +256,9 @@ const webProjects = [
   },
   {
     name: "Next.js Storefronts",
-    desc: "Six production storefronts shipped and maintained — SSR/SEO, multi-currency, Arabic RTL and payment gateway integration.",
+    desc: "Eight production storefronts shipped and maintained — SSR/SEO, multi-currency, Arabic RTL and payment gateway integration.",
     tech: ["Next.js", "React", "SSR & SEO", "Arabic RTL", "Payments"],
-    badge: "6 Live Sites",
+    badge: "8 Live Sites",
     links: storefronts,
   },
 ];
@@ -287,7 +283,7 @@ const ventures = [
     desc: "Agri-tech platform for farmers — live crop and mandi rates plus an online store for pesticides, sprays and farming supplies.",
     tech: ["Next.js", "React", "SEO"],
     badge: "My Product",
-    note: "cropely.com — currently offline",
+    links: [{ label: "cropely.com", url: "https://cropely.com/" }],
   },
   {
     name: "Freelance Paid Media",
@@ -309,32 +305,31 @@ const archiveProjects = [
   { name: "Status Saver & Sticker Maker",   detail: "WhatsApp status downloader — sticker packs, subscriptions, full ad stack" },
   { name: "All Document Reader & PDF Toolkit", detail: "Merge, split, compress, lock/unlock, image-to-PDF, watermarks, e-signature" },
   { name: "HR & Payroll Management Suite",  detail: "Supportive Hands IT Solutions — internal, used by 80+ employees" },
-  { name: "Travel Explorer App",            detail: "CODEMATICS Inc — Google Maps, nearby places & REST APIs" },
 ];
 
 const skillGroups = [
-  { label: "Mobile",                skills: ["Flutter", "Dart", "React Native", "Android", "iOS", "Play Console", "App Store Connect"] },
-  { label: "Full-Stack Web",        skills: ["Next.js", "React", "Node.js", "Laravel", "PHP", "Python", "FastAPI", "Supabase", "PostgreSQL", "MySQL"] },
-  { label: "Architecture",          skills: ["Multi-tenant SaaS", "Clean Architecture", "MVVM", "GetX", "BLoC", "Riverpod", "Provider", "Redux"] },
-  { label: "Backend & APIs",        skills: ["Firebase", "Firestore", "REST APIs", "GraphQL", "FCM", "Webhooks", "SSR & SEO"] },
-  { label: "Digital Marketing",     skills: ["Meta Ads", "TikTok Ads", "Pixel & CAPI", "Event Tracking", "Retargeting", "Creative Testing", "ROAS Scaling"] },
-  { label: "AI & Integration",      skills: ["ChatGPT API", "AI Integration", "Agora", "Camera API"] },
-  { label: "Maps & Payments",       skills: ["Google Maps", "Stripe", "NFC", "In-App Purchases", "Live GPS", "5+ Payment Gateways"] },
-  { label: "Monetization & DevOps", skills: ["AdMob", "AppLovin", "Unity Ads", "CI/CD", "Git", "Figma", "Crashlytics"] },
+  { label: "Software Engineering", skills: ["Python", "FastAPI", "Node.js", "Next.js", "React", "C#", "Laravel", "PHP"] },
+  { label: "Mobile", skills: ["Flutter", "Dart", "React Native", "Play Console", "App Store Connect"] },
+  { label: "Backend & Cloud", skills: ["AWS EC2", "AWS S3", "Firebase", "Supabase", "PostgreSQL", "MySQL", "REST APIs", "GraphQL", "Multi-tenant SaaS", "Stripe"] },
+  { label: "AI & LLM", skills: ["LLM Integration", "ChatGPT API", "Prompt Engineering", "AI-Powered Features"] },
+  { label: "Paid Advertising", skills: ["Meta Ads", "TikTok Ads", "Snapchat Ads", "Google Ads", "Retargeting", "A/B Testing", "ROAS Scaling"] },
+  { label: "Growth & Analytics", skills: ["CRO", "Funnel Building", "Shopify", "Liquid", "Google Analytics", "Meta & TikTok Pixel", "Tag Manager", "Klaviyo"] },
+  { label: "Tools", skills: ["Git", "CI/CD", "Figma", "Canva", "CapCut", "AdMob", "AppLovin"] },
 ];
 
 const highlights = [
   "10+ live apps published worldwide",
   "50,000+ total app downloads",
   "Apps live in UK, Gulf & Pakistan",
-  "6 production Next.js storefronts",
+  "8 production Next.js storefronts",
   "Multi-tenant e-commerce SaaS shipped",
   "I run my own Meta & TikTok campaigns",
-  "3,000+ LinkedIn connections",
+  "$2M+ client revenue across 4+ brands",
   "BSc CGPA: 3.56/4.0 · 1st Position",
 ];
 
 const certifications = [
+  { name: "Digital Marketing Revolution", issuer: "University of Illinois · Coursera · 2023" },
   {
     name: "Google Digital Marketing & E-Commerce Professional Certificate",
     issuer: "Coursera",
@@ -486,7 +481,7 @@ export default function Page() {
 
   // Close menu on resize to desktop
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth > 640) setMenuOpen(false); };
+    const onResize = () => { if (window.innerWidth > 900) setMenuOpen(false); };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -547,7 +542,7 @@ export default function Page() {
               </li>
             ))}
             <li>
-              <a href="/amjad_khan_cv.pdf" download="Amjad_Khan_CV.pdf" className="nav-resume-btn">
+              <a href="/Amjad_Khan_CV.pdf" download="Amjad_Khan_CV.pdf" className="nav-resume-btn">
                 Resume
               </a>
             </li>
@@ -581,7 +576,7 @@ export default function Page() {
           ))}
         </nav>
         <a
-          href="/amjad_khan_cv.pdf"
+          href="/Amjad_Khan_CV.pdf"
           download="Amjad_Khan_CV.pdf"
           className="btn-ghost mobile-menu-resume"
           onClick={handleMobileLinkClick}
@@ -621,25 +616,25 @@ export default function Page() {
             <div className="hero-left">
               <p className="hero-greeting fade-in delay-1">Hi, my name is</p>
               <h1 className="hero-name fade-in delay-2">Amjad Khan.</h1>
-              <h2 className="hero-title fade-in delay-3">I build products end to end.</h2>
+              <h2 className="hero-title fade-in delay-3">Software Engineer.</h2>
               <p className="hero-desc fade-in delay-4">
-                I&apos;m a Full Stack Developer based in Islamabad, Pakistan, shipping{" "}
+                I&apos;m a Software Engineer &amp; Performance Marketer based in Islamabad, Pakistan, shipping{" "}
                 <strong style={{ color: "var(--lightest-slate)" }}>Flutter &amp; React Native</strong> apps,{" "}
                 <strong style={{ color: "var(--lightest-slate)" }}>Next.js</strong> storefronts and a{" "}
                 <strong style={{ color: "var(--lightest-slate)" }}>Laravel + FastAPI</strong>{" "}
-                multi-tenant e-commerce SaaS. 10+ live apps and 50,000+ downloads across UK, Gulf
-                &amp; Pakistan — and I run my own Meta &amp; TikTok campaigns.
+                multi-tenant e-commerce SaaS. 10+ live apps, 50,000+ downloads and 8 production storefronts — paired with paid growth across Meta, TikTok, Snapchat and Google Ads.
               </p>
               <div className="hero-cta fade-in delay-5">
                 <a href="#contact" className="btn-primary">Get In Touch</a>
                 <a href="#projects" className="btn-ghost">View Projects</a>
+                <a href="/Amjad_Khan_CV.pdf" download="Amjad_Khan_CV.pdf" className="btn-ghost"><IconDownload /> Download CV</a>
               </div>
             </div>
             <div className="hero-photo-wrapper fade-in delay-3">
               <div className="hero-photo-box">
                 <Image
                   src="/profile.png"
-                  alt="Amjad Khan — Full Stack Developer"
+                  alt="Amjad Khan — Software Engineer"
                   width={280}
                   height={340}
                   priority
@@ -660,17 +655,17 @@ export default function Page() {
             <h2 className="numbered-heading"><span className="num">01.</span>About Me</h2>
             <div className="about-text">
               <p>
-                Hello! I&apos;m Amjad, a Full Stack Developer who owns products end to end — scoping,
+                Hello! I&apos;m Amjad, a Software Engineer who owns products end to end — scoping,
                 architecture, build, release and post-launch iteration — working alongside senior
-                engineers and stakeholders. I&apos;ve been shipping since 2021, and today I ship across
+                engineers and stakeholders. Today I work across
                 three surfaces at once: mobile apps, storefront websites and the platform behind them.
               </p>
               <p>
                 Currently I&apos;m a{" "}
-                <span style={{ color: "var(--green)" }}>Product Engineer</span> at{" "}
+                <span style={{ color: "var(--green)" }}>Product Engineer &amp; Senior eCommerce Performance Marketer</span> at{" "}
                 <a href="https://ecomplug.com/" target="_blank" rel="noopener noreferrer">EcomPlug</a>,
-                where I run <strong style={{ color: "var(--lightest-slate)" }}>3 live apps</strong> and{" "}
-                <strong style={{ color: "var(--lightest-slate)" }}>6 production websites</strong>{" "}
+                where I build <strong style={{ color: "var(--lightest-slate)" }}>mobile apps</strong> and{" "}
+                <strong style={{ color: "var(--lightest-slate)" }}>8 production websites</strong>{" "}
                 simultaneously — plus a Laravel + FastAPI multi-tenant SaaS handling inventory,
                 warehouses, orders, sellers, multi-store data and staff permissions.
               </p>
@@ -679,7 +674,7 @@ export default function Page() {
                 agri-tech platform — where I handle the paid{" "}
                 <strong style={{ color: "var(--lightest-slate)" }}>Meta &amp; TikTok</strong> campaigns
                 myself: pixel and events setup, creative testing, retargeting and ROAS scaling.
-                Agile/Scrum practitioner, open to remote or on-site roles globally.
+                I also work remotely with international and local clients on paid advertising, Shopify stores and conversion optimization. Open to remote or on-site roles globally.
               </p>
               <p style={{ marginBottom: 8, color: "var(--lightest-slate)", fontWeight: 600 }}>
                 A few highlights:
@@ -781,10 +776,45 @@ export default function Page() {
           </div>
         </section>
 
+        <section id="marketing" aria-labelledby="marketing-heading">
+          <div className="section-container">
+            <h2 id="marketing-heading" className="numbered-heading"><span className="num">04.</span>Performance Marketing</h2>
+            <p className="marketing-intro">I build the product and help it grow. From paid acquisition to Shopify storefronts and conversion optimization, I connect engineering with measurable commercial results.</p>
+            <div className="marketing-metrics">
+              {[ ["$2M+", "Client revenue across 4+ brands"], ["3x–7x", "Return on ad spend"], ["277K+", "Orders generated"], ["6.8M+", "Sessions driven"] ].map(([value, label]) => (
+                <div className="marketing-metric" key={label}><strong>{value}</strong><span>{label}</span></div>
+              ))}
+            </div>
+            <div className="projects-grid">
+              <article className="project-card">
+                <span className="skill-group-title">EcomPlug · Dec 2025 – Present · On-site</span>
+                <h3 className="project-name">Engineering meets paid growth</h3>
+                <p className="project-desc">Senior eCommerce Performance Marketer alongside my Product Engineer role, serving UAE, KSA and Oman. Meta and TikTok campaigns achieved 7x ROAS, scaling one store to AED 82K monthly revenue in three months and AED 220K+ between June and September 2026.</p>
+              </article>
+              <article className="project-card">
+                <span className="skill-group-title">Self-employed · Remote · Part-time</span>
+                <h3 className="project-name">Performance marketing &amp; Shopify</h3>
+                <p className="project-desc">Launched 50+ Shopify stores for international and local clients. At Castify.pk, achieved $0.40 cost per order: 1,000+ orders with $400 in monthly ad spend. Improved conversions up to 45%, reduced acquisition cost by 30% and trained 100+ students.</p>
+              </article>
+              <article className="project-card">
+                <span className="skill-group-title">Master Super Store · Mar 2024 – Oct 2025</span>
+                <h3 className="project-name">Digital Marketing &amp; eCommerce Manager</h3>
+                <p className="project-desc">Remote, part-time role in Pakistan. Generated PKR 206.93M ($741K+ USD) in sales, 2.04M sessions and 117,300+ orders through Meta and TikTok campaigns.</p>
+              </article>
+            </div>
+            <h3 className="project-group-title">Earlier Marketing Experience</h3>
+            <ul className="archive-list">
+              <li><strong>Digital Pro · Marketer</strong><span>Marketing agency · Remote · Part-time</span></li>
+              <li><strong>Master Super Store · Performance Marketer</strong><span>On-site · 2020</span></li>
+              <li><strong>TechAlign · Digital Marketing Intern</strong></li>
+            </ul>
+          </div>
+        </section>
+
         {/* ══════════ SKILLS ══════════ */}
         <section id="skills">
           <div className="section-container">
-            <h2 className="numbered-heading"><span className="num">04.</span>Technical Skills</h2>
+            <h2 className="numbered-heading"><span className="num">05.</span>Engineering &amp; Growth Skills</h2>
             <div className="skills-grid">
               {skillGroups.map((g) => (
                 <div key={g.label}>
@@ -801,7 +831,7 @@ export default function Page() {
         {/* ══════════ EDUCATION ══════════ */}
         <section id="education">
           <div className="section-container">
-            <h2 className="numbered-heading"><span className="num">05.</span>Education &amp; Certifications</h2>
+            <h2 className="numbered-heading"><span className="num">06.</span>Education &amp; Certifications</h2>
             <div className="edu-card">
               <h3 className="edu-degree">BSc Software Engineering</h3>
               <p className="edu-university">University of Haripur, Pakistan</p>
@@ -811,9 +841,7 @@ export default function Page() {
                 <span>🏆 1st Position Holder</span>
               </div>
               <p className="edu-desc">
-                Graduated top of class with a CGPA of 3.56/4.0, securing 1st position for three
-                consecutive semesters. Focused on software engineering principles, mobile application
-                development, and systems design.
+                BSc Software Engineering, 2017–2021. CGPA 3.56/4.0 and 1st Position Holder.
               </p>
             </div>
 
@@ -853,7 +881,7 @@ export default function Page() {
               </p>
               <a href="mailto:amjidkhaniuoh@gmail.com" className="btn-primary">Say Hello</a>
               <a
-                href="/amjad_khan_cv.pdf"
+                href="/Amjad_Khan_CV.pdf"
                 download="Amjad_Khan_CV.pdf"
                 className="btn-ghost"
                 style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
